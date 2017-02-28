@@ -35,10 +35,24 @@ ssh class81@aw-4r13-n01.calculquebec.ca
 
 Once the team has access to the HPC, the team will need to setup the mugqic pipeline environment to allow the loading of modules for the programs you will be employing.
 
-To setup enviroment please add the following lines to your ~/.bash_profile.
+To setup enviroment please add the following lines to your ~/.bash_profile and then source your bash_profile to initiate changes.
 See [Quick setup for abacus, guillimin and mammouth users](https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-quick-setup-for-abacus-guillimin-and-mammouth-users)
 
 More information about genomic resources can be found [here](https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-genomes)
+
+All files required for this module have been uploaded to the shared space provide by McGill HPC
+Commands:
+```
+##In home directory
+cp -R /sb/project/class/BioHack/biohackathon_mutations/ ./
+
+##Test execution script
+cd biohackathon_mutations/
+
+cp bin/c3g_execution_script.sh ./
+
+time ./c3g_execution_script.sh > teamXX.timings
+```
 
 ### Using modules 
 Commands to view all modules/programs available, load/unload a module and identify which modules currently loaded are as follows:
@@ -63,13 +77,13 @@ The sample from the CEPH pedigree has been sequenced. Given the raw data, C3G ha
 
 The team's goal is to achieve similar F1 scores while decreasing computational time.
 
-Processing time: ~29 mins
+Processing time: ~25 mins (system time)
 
 | True-pos | False-pos | False-neg | Precision | Sensitivity | F-measure |
 |:-------- |:--------- |:--------- |:--------- |:----------- |:--------- |
 |553       |36         |167        |0.9389     |0.7681       |0.8449     |
 
-Teams will be ranked based on the number of false positive (FP), false negative (FN) and the (cpu) time required to generate the final vcf file.  
+Teams will be ranked based on the number of false positive (FP), false negative (FN) and the (cpu/sys) time required to generate the final vcf file.  
 
 ### Rules
 1. Have fun!
@@ -80,7 +94,7 @@ Teams will be ranked based on the number of false positive (FP), false negative 
 
 ### Required files for assessment
 1. The bash_script used to execute your commands.
-2. DnaSeq_log_file or logs indicating computational timings (i.e. *.o system files) 
+2. Please pipe computational timings to file so we can verify the computational time.
 3. Final vcf.
 
 
