@@ -1,0 +1,2 @@
+##Generates F1 score. Also provides vcfs containing TPs, FPs, FNs for further analysis
+~/bin/3.6.2/rtg vcfeval -b ~/github/biohackathon_mutations/benchmarking/truth_set_gcat3_3.025.vcf.gz --bed-regions ~/github/biohackathon_mutations/benchmarking/truth_regions_025_chr22.bed -t /gs/project/mugqic/analyste_dev/phase2/genomes/Homo_sapiens/hg1k_v37/fasta/hg1k_v37_sdf/ --sample gcat_set_025_chr22 --threads=2 --all-records -o comparisons/rtgeval_gcat_025_chr22 -c alignment/gcat_set_025_chr22/gcat_set_025_chr22.hc.vcf.gz
