@@ -3,7 +3,7 @@
 
 In this biohackathon module, you are working at a genomic center sequencing a patient's genome to guide decisions in medical treatment. In this scenario, the patient is in dire need of treatment so the identifation of clinically relevant mutations is time sensitive.  Therefore, your challenge is to successfully analyze the given sample and identify the mutations in the sample as quickly as possible.  The new Illumina sequencer, the Illumina SuperDuper, provides files containing all the reads (fastq or bam) and your goal is to generate the file with the mutations (vcf).
 
-We will be working with one sample NA12878 from the CEPH 1463 pedigree sequenced by the [Genome in a Bottle](http://jimb.stanford.edu/giab/) (GIAB) consortium.
+We will be working with one sample from the CEPH 1463 pedigree sequenced by the [Genome in a Bottle](http://jimb.stanford.edu/giab/) (GIAB) consortium.
 
 Due to time and resource constraints, we will provide reads from chromosome 22 only.
 
@@ -20,11 +20,22 @@ The initial structure of your folders should look like this:
 ```
 
 ### Environment setup
-The team will be utilizing McGill's HPC cluster: Guillimin.  Accounts have been setup and credientials to login will be provided.
+The team will be utilizing McGill's HPC cluster: Guillimin.  Accounts have been setup and credientials to login will be provided by the instructors.
+
+To access:
+All access to the nodes listed above is permitted only via ssh. Applications such as Putty (for Windows) or on the command-line from within Linux or Mac can be used to make the ssh connection.
+
+```
+ssh -l <username>@<hostname>
+
+For example:
+
+ssh class81@aw-4r13-n01.calculquebec.ca
+```
 
 Once the team has access to the HPC, the team will need to setup the mugqic pipeline environment to allow the loading of modules for the programs you will be employing.
 
-To setup enviroment please add the following lines to your ~/.bash_profile
+To setup enviroment please add the following lines to your ~/.bash_profile.
 See [Quick setup for abacus, guillimin and mammouth users](https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-quick-setup-for-abacus-guillimin-and-mammouth-users)
 
 More information about genomic resources can be found [here](https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-genomes)
@@ -46,7 +57,7 @@ module list
 
 ![Data processing diagram](img/dnaseq_pipeline.jpg)
     
-The NA12878 samples from the CEPH pedigree has been sequenced. Given the raw data, C3G has processed the data using the GATK's 'best practices' as ground truth. This includes read trimming, quality reads mapped to the reference genome (GRCh37) and the resulting bam files have been further processed using indel realigner, fixmates, and base recalibration to reduce known systematic biases. Variants were called with GATK haplotype caller in GVCF mode.
+The sample from the CEPH pedigree has been sequenced. Given the raw data, C3G has processed the data using the GATK's 'best practices' as ground truth. This includes read trimming, quality reads mapped to the reference genome (GRCh37) and the resulting bam files have been further processed using indel realigner, fixmates, and base recalibration to reduce known systematic biases. Variants were called with GATK haplotype caller in GVCF mode.
 
 ### Goal
 
@@ -58,15 +69,26 @@ Processing time: ~29 mins
 |:-------- |:--------- |:--------- |:--------- |:----------- |:--------- |
 |553       |36         |167        |0.9389     |0.7681       |0.8449     |
 
-Teams will be ranked based on the number of false positive, false negative and the (cpu) time required to generate the final vcf file.
+Teams will be ranked based on the number of false positive (FP), false negative (FN) and the (cpu) time required to generate the final vcf file.  
 
 ### Rules
 1. Have fun!
 2. The team may add/remove steps as well as swap in different programs at any step in the process.  If the program you wish to add/try is not in our list of modules. Please install them in your local space.
 3. The team may start from the raw fastq files or the bam containing the raw reads.  However, in the case of the latter, the team will be penalized the time required to align the reads.
+4. Their will be a penalty of 10 seconds to cpu time for each FP and FN.
 
 
 ### Required files for assessment
 1. The bash_script used to execute your commands.
 2. DnaSeq_log_file or logs indicating computational timings (i.e. *.o system files) 
 3. Final vcf.
+
+
+### Contact info
+The following instructors will respond to emails between (9am - 10pm)
+Robert Eveleigh: robert.eveleigh@mcgill.ca
+Mathieu Bourgey: mathieu.bourgey@mcgill.ca
+Guillaume Bourque: guil.bourque@mcgill.ca
+
+## Acknowledgement
+**We would like to acknowledge McGill HPC, Compute Canada and Calcul Quebec for their continued support and resources for this biohackathon module.**
