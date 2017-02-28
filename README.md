@@ -1,5 +1,5 @@
 # Biohackathon: Rapid Identification of Mutations
-***By Robert Eveleigh, MSc., Mathieu Bourgey, PhD., Guillaume Bourque, PhD.***
+***By Robert Eveleigh, MSc., Mathieu Bourgey, PhD., and Guillaume Bourque, PhD.***
 
 In this biohackathon module, you are working at a genomic center sequencing a patient's genome to guide decisions in medical treatment. In this scenario, the patient is in dire need of treatment so the identifation of clinically relevant mutations is time sensitive.  Therefore, your challenge is to successfully analyze the given sample and identify the mutations in the sample as quickly as possible.  The new Illumina sequencer, the Illumina SuperDuper, provides files containing all the reads (fastq or bam) and your goal is to generate the file with the mutations (vcf).
 
@@ -14,9 +14,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 The initial structure of your folders should look like this:
 ```
 <ROOT>
-|--raw_reads/                
-    `--gcat_set_25/          # raw reads of chr22 from the SuperDuper sequencer. Contains fastqs, initial bam, and bed files.
-|-- bin/                     # bin directory. Contains bash scripts to execute standard pipeline, and benchmarking.
+|-- bin/                     # bin directory. Contains bash scripts to execute standard pipeline, and benchmarking (compute timing and F1 score generation).
 |-- benchmarking/            # benchmarking results. Contains high quality variants from the GIAB
     
 ```
@@ -54,7 +52,7 @@ The NA12878 samples from the CEPH pedigree has been sequenced. Given the raw dat
 
 The team's goal is to achieve similar F1 scores while decreasing computational time.
 
-Processing time: ~30 mins
+Processing time: ~29 mins
 
 | True-pos | False-pos | False-neg | Precision | Sensitivity | F-measure |
 |:-------- |:--------- |:--------- |:--------- |:----------- |:--------- |
@@ -70,5 +68,5 @@ Teams will be ranked based on the number of false positive, false negative and t
 
 ### Required files for assessment
 1. The bash_script used to execute your commands.
-2. Logs indicating computational timings (i.e. *.o system files) 
+2. DnaSeq_log_file or logs indicating computational timings (i.e. *.o system files) 
 3. Final vcf.
