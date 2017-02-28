@@ -51,7 +51,7 @@ cd biohackathon_mutations/
 
 cp bin/c3g_execution_script.sh ./
 
-time ./c3g_execution_script.sh > teamXX.timings
+time ./c3g_execution_script.sh
 ```
 
 ### Using modules 
@@ -77,13 +77,13 @@ The sample from the CEPH pedigree has been sequenced. Given the raw data, C3G ha
 
 The team's goal is to achieve similar F1 scores while decreasing computational time.
 
-Processing time: ~25 mins (system time)
+Processing time: Total CPU time ~13 mins (user + system time)
 
 | True-pos | False-pos | False-neg | Precision | Sensitivity | F-measure |
 |:-------- |:--------- |:--------- |:--------- |:----------- |:--------- |
 |553       |36         |167        |0.9389     |0.7681       |0.8449     |
 
-Teams will be ranked based on the number of false positive (FP), false negative (FN) and the (cpu/system) time required to generate the final vcf file.  
+Teams will be ranked based on the number of false positive (FP), false negative (FN) and the (user + system) time required to generate the final vcf file.  
 
 ### Rules
 1. Have fun!
@@ -93,9 +93,8 @@ Teams will be ranked based on the number of false positive (FP), false negative 
 
 
 ### Required files for assessment
-1. The bash_script used to execute your commands.
-2. Please pipe computational timings to file so we can verify the computational time.
-3. Final vcf.
+1. A functioning bash script used to execute your commands.
+2. Final vcf.
 
 
 ### Contact info
