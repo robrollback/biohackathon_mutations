@@ -14,7 +14,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 The initial structure of your folders should look like this:
 ```
 <ROOT>
-|-- bin/                     # bin directory. Contains bash scripts to execute standard pipeline, and benchmarking (compute timing and F1 score generation).
+|-- bin/                     # bin directory. Contains bash scripts to execute standard pipeline, and benchmarking (F1 score generation).
 |-- benchmarking/            # benchmarking results. Contains high quality variants from the GIAB
     
 ```
@@ -22,7 +22,6 @@ The initial structure of your folders should look like this:
 ### Environment setup
 The team will be utilizing McGill's HPC cluster: Guillimin.  Accounts have been setup and credientials to login will be provided by the instructors.
 
-To access:
 All access to the nodes listed above is permitted only via ssh. Applications such as Putty (for Windows) or on the command-line from within Linux or Mac can be used to make the ssh connection.
 
 ```
@@ -36,11 +35,12 @@ ssh class81@aw-4r13-n01.calculquebec.ca
 Once the team has access to the HPC, the team will need to setup the mugqic pipeline environment to allow the loading of modules for the programs you will be employing.
 
 To setup enviroment please add the following lines to your ~/.bash_profile and then source your bash_profile to initiate changes.
-See [Quick setup for abacus, guillimin and mammouth users](https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-quick-setup-for-abacus-guillimin-and-mammouth-users)
+For details see [Quick setup for abacus, guillimin and mammouth users](https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-quick-setup-for-abacus-guillimin-and-mammouth-users)
 
 More information about genomic resources can be found [here](https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-genomes)
 
 All files required for this module have been uploaded to the shared space provide by McGill HPC
+
 Commands:
 ```
 ##In home directory
@@ -83,12 +83,12 @@ Processing time: ~25 mins (system time)
 |:-------- |:--------- |:--------- |:--------- |:----------- |:--------- |
 |553       |36         |167        |0.9389     |0.7681       |0.8449     |
 
-Teams will be ranked based on the number of false positive (FP), false negative (FN) and the (cpu/sys) time required to generate the final vcf file.  
+Teams will be ranked based on the number of false positive (FP), false negative (FN) and the (cpu/system) time required to generate the final vcf file.  
 
 ### Rules
 1. Have fun!
 2. The team may add/remove steps as well as swap in different programs at any step in the process.  If the program you wish to add/try is not in our list of modules. Please install them in your local space.
-3. The team may start from the raw fastq files or the bam containing the raw reads.  However, in the case of the latter, the team will be penalized the time required to align the reads.
+3. The team may start from the raw fastq files or the bam containing the raw reads.  However, in the case of the latter, the team will be penalized the time required to align the reads (~75 seconds).
 4. Their will be a penalty of 10 seconds to cpu time for each FP and FN.
 
 
@@ -101,7 +101,9 @@ Teams will be ranked based on the number of false positive (FP), false negative 
 ### Contact info
 The following instructors will respond to emails between (9am - 10pm)
 Robert Eveleigh: robert.eveleigh@mcgill.ca
+
 Mathieu Bourgey: mathieu.bourgey@mcgill.ca
+
 Guillaume Bourque: guil.bourque@mcgill.ca
 
 ## Acknowledgement
