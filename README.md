@@ -14,6 +14,8 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 The initial structure of your folders should look like this:
 ```
 <ROOT>
+|--raw_reads
+    `---gcat_set_025         # directory containing raw_reads. Directory contains both fastq and bam files as well as bed file.
 |-- bin/                     # bin directory. Contains bash scripts to execute standard pipeline, and benchmarking (F1 score generation).
 |-- benchmarking/            # benchmarking results. Contains high quality variants from the GIAB
     
