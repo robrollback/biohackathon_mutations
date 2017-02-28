@@ -64,7 +64,7 @@ Teams will be ranked based on the number of false positive, false negative and t
 
 ### Rules
 1. Have fun!
-2. The team may add/remove steps as well as swap in different programs at any step in the process.  If the program you wish to add/try that is not in our list of modules. Please install them in your local space.
+2. The team may add/remove steps as well as swap in different programs at any step in the process.  If the program you wish to add/try is not in our list of modules. Please install them in your local space.
 3. The team may start from the raw fastq files or the bam containing the raw reads.  However, in the case of the latter, the team will be penalized the time required to align the reads.
 
 
