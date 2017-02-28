@@ -71,7 +71,7 @@ module list
 
 ![Data processing diagram](img/dnaseq_pipeline.jpg)
     
-The sample from the CEPH pedigree has been sequenced. Given the raw data, C3G has processed the data using the GATK's 'best practices' as ground truth. This includes read trimming, quality reads mapped to the reference genome (GRCh37) and the resulting bam files have been further processed using indel realigner, fixmates, and base recalibration to reduce known systematic biases. Variants were called with GATK haplotype caller in GVCF mode.
+The sample from the CEPH pedigree has been sequenced. Given the raw data, C3G has processed the data using the GATK's 'best practices' as ground truth. This includes read trimming, quality reads mapped to the reference genome (GRCh37) and the resulting bam files have been further processed using indel realigner, fixmates, mark duplicates and base recalibration to reduce known systematic biases. Variants were called with GATK haplotype caller in GVCF mode.
 
 ### Goal
 
@@ -94,7 +94,8 @@ Teams will be ranked based on the number of false positive (FP), false negative 
 
 ### Required files for assessment
 1. A functioning bash script used to execute your commands.
-2. Final vcf.
+2. Execution time (user + system time) generated from the time unix command.
+3. Final vcf.
 
 
 ### Contact info
