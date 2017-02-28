@@ -100,6 +100,7 @@ Teams will be ranked based on the number of false positive (FP), false negative 
 
 ### Contact info
 The following instructors will respond to emails between (9am - 10pm)
+
 Robert Eveleigh: robert.eveleigh@mcgill.ca
 
 Mathieu Bourgey: mathieu.bourgey@mcgill.ca
